@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { AuthProvider } from "./authentication/AuthProvider";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./shared/Routes";
+import NavBar from "./shared/NavBar";
+import BackgroundImage from "./utils/BackgroundImage";
+import AlertMessage from "./authentication/AlertMessage";
+import Instructions from "./utils/Instructions";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+import BackToTop from "./utils/BackToTop";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <BrowserRouter>
+         <AuthProvider>
+            <BackgroundImage>
+               <NavBar />
+               <Instructions />
+               <AlertMessage />
+               <Routes />
+               <BackToTop />
+            </BackgroundImage>
+         </AuthProvider>
+      </BrowserRouter>
+   );
 }
 
 export default App;
