@@ -17,21 +17,21 @@ export default function AddMenu() {
 
    const createMenu = async () => {
       setLoading(true);
-      const itemId = uuid();
-      const file = imageRef.current.files[0];
-      const fileRef = storageDB.ref().child(itemId);
-      await fileRef.put(file);
-      const imageUrl = await fileRef.getDownloadURL();
-      const item = {
-         category: categoryRef.current.value,
-         menu: menuRef.current.value,
-         image: imageUrl,
-         price: priceRef.current.value,
-         serving: servingRef.current.value,
-         dateAdded: Date.now(),
-         id: itemId,
-      };
       try {
+         const itemId = uuid();
+         const file = imageRef.current.files[0];
+         const fileRef = storageDB.ref().child(itemId);
+         await fileRef.put(file);
+         const imageUrl = await fileRef.getDownloadURL();
+         const item = await {
+            category: categoryRef.current.value,
+            menu: menuRef.current.value,
+            image: imageUrl,
+            price: priceRef.current.value,
+            serving: servingRef.current.value,
+            dateAdded: Date.now(),
+            id: itemId,
+         };
          await db.collection(categoryRef.current.value).doc(itemId).set(item);
          await setAuthMessage(`Successfully added "${item.menu}"`);
          menuRef.current.value = "";

@@ -17,9 +17,11 @@ export default function SingleCard({ menu }) {
                   rounded
                />
             </div>
-            <Card.Text>Good for {menu.serving} persons</Card.Text>
          </Card.Body>
-         <Card.Footer>P {menu.price}</Card.Footer>
+         <Card.Footer className="mx-auto w-75">
+            <div>Good for {menu.serving} persons</div>
+            <div>P {menu.price}</div>
+         </Card.Footer>
          <AddToCart menu={menu} />
          <EditDeleteButtons menu={menu} />
       </div>

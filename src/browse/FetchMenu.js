@@ -3,7 +3,7 @@ import { db } from "../firebase";
 import LoadingPage from "../utils/LoadingPage";
 import SingleCard from "./SingleCard";
 
-export default function DrinksMenuAll({ menuCategory }) {
+export default function FetchMenu({ menuCategory }) {
    const [menuItems, setMenuItems] = useState([]);
    const [loading, setLoading] = useState(true);
 

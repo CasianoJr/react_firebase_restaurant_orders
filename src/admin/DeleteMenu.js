@@ -36,7 +36,10 @@ export default function DeleteMenuModal({ menu }) {
                </Button>
             </Modal.Footer>
          </Modal>
-         <button className="my-1 btn btn-danger btn-sm" onClick={() => setShow(true)}>
+         <button
+            className="my-1 btn btn-outline-danger btn-sm"
+            onClick={() => setShow(true)}
+         >
             Delete
          </button>
       </React.Fragment>

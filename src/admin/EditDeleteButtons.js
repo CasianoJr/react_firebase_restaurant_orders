@@ -13,7 +13,7 @@ export default function EditDeleteButtons({ menu }) {
    return (
       <div className="d-flex justify-content-around">
          <Link
-            className="my-1 btn btn-secondary btn-sm"
+            className="my-1 btn btn-outline-secondary btn-sm"
             to={`/${menu.category}/${menu.id}/update`}
          >
             Edit

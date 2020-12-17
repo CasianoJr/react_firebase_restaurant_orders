@@ -9,18 +9,21 @@ import Instructions from "./utils/Instructions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import BackToTop from "./utils/BackToTop";
+import DataBaseProvider from "./shared/DataBaseProvider";
 
 function App() {
    return (
       <BrowserRouter>
          <AuthProvider>
-            <BackgroundImage>
-               <NavBar />
-               <Instructions />
-               <AlertMessage />
-               <Routes />
-               <BackToTop />
-            </BackgroundImage>
+            <DataBaseProvider>
+               <BackgroundImage>
+                  <NavBar />
+                  <Instructions />
+                  <AlertMessage />
+                  <Routes />
+                  <BackToTop />
+               </BackgroundImage>
+            </DataBaseProvider>
          </AuthProvider>
       </BrowserRouter>
    );
