@@ -12,7 +12,7 @@ export function AuthProvider(props) {
    const [loading, setLoading] = useState(true);
    const [authError, setAuthError] = useState("");
    const [authMessage, setAuthMessage] = useState("");
-   const isAdmin = true;
+   const [isAdmin, setIsAdmin] = useState(false);
 
    useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -32,6 +32,7 @@ export function AuthProvider(props) {
       authMessage,
       setAuthMessage,
       isAdmin,
+      setIsAdmin,
    };
 
    return (

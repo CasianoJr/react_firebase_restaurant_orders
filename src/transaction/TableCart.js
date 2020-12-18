@@ -1,10 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import RemoveToCart from "./RemoveToCart";
+import AddToCart from "./AddToCart";
 
 export default function TableCart({ orders }) {
    return (
       <div>
-         <Table variant="danger" className="rounded table rounded h6 text-center mx-auto">
+         <Table className="rounded table h6 text-center mx-auto">
             <thead>
                <tr>
                   <th>#</th>
@@ -24,7 +26,17 @@ export default function TableCart({ orders }) {
                         <th>{menu.menu}</th>
                         <th>{menu.category}</th>
                         <th>{menu.serving}</th>
-                        <th>{menu.orderCount}</th>
+                        <th>
+                           <RemoveToCart
+                              className="btn btn-outline-secondary mx-2 px-2 py-0"
+                              menu={menu}
+                           />
+                           {menu.orderCount}
+                           <AddToCart
+                              className="btn btn-outline-secondary mx-2 px-2 py-0"
+                              menu={menu}
+                           />
+                        </th>
                         <th>{menu.price}</th>
                      </tr>
                   ))}

@@ -14,6 +14,9 @@ export default function AdminNavs() {
                   <Link to="/add_menu" className="dropdown-item">
                      Add Menu
                   </Link>
+                  <Link to="/retrieve_all_orders" className="dropdown-item">
+                     Retrieve Orders
+                  </Link>
                </NavDropdown>
             </>
          )}

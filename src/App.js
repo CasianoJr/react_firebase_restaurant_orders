@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import BackToTop from "./utils/BackToTop";
 import DataBaseProvider from "./shared/DataBaseProvider";
+import Footer from "./utils/Footer";
 
 function App() {
    return (
@@ -21,6 +22,7 @@ function App() {
                   <Instructions />
                   <AlertMessage />
                   <Routes />
+                  <Footer />
                   <BackToTop />
                </BackgroundImage>
             </DataBaseProvider>

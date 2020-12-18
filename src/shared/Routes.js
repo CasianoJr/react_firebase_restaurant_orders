@@ -9,7 +9,8 @@ import { RoutesLoginRequired, RoutesIsLoginAlready, RoutesIsAdmin } from "./Rout
 import AddMenu from "../admin/AddMenu";
 import MenuAll from "../browse/MenuAll";
 import UpdateMenu from "../admin/UpdateMenu";
-import RetrieveCart from "../transaction/RetrieveCart";
+import RetrieveCartV2 from "../transaction/RetrieveCartV2";
+import RetrieveAllOrders from "../admin/RetrieveAllOrders";
 
 export default function Routes() {
    return (
@@ -21,12 +22,13 @@ export default function Routes() {
          <RoutesIsAdmin exact path="/add_menu" component={AddMenu} />
          <Route exact path="/browse" component={MenuAll} />
          <RoutesLoginRequired exact path="/update_profile" component={UpdateProfile} />
-         <RoutesLoginRequired exact path="/order_list" component={RetrieveCart} />
+         <RoutesLoginRequired exact path="/order_list" component={RetrieveCartV2} />
          <RoutesIsAdmin
             exact
             path="/:menuCategory/:menuId/update"
             component={UpdateMenu}
          />
+         <RoutesIsAdmin exact path="/retrieve_all_orders" component={RetrieveAllOrders} />
       </Switch>
    );
 }

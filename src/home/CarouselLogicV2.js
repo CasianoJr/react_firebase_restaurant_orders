@@ -5,8 +5,9 @@ import { useDataBase } from "../shared/DataBaseProvider";
 
 export default function CarouselLogicV2() {
    const { appetizers, drinks, desserts } = useDataBase();
-   const menuItems = [...appetizers, ...drinks, ...desserts];
-   menuItems.sort(() => 0.5 - Math.random());
+   const menuItems = [...appetizers, ...drinks, ...desserts].sort(
+      () => 0.5 - Math.random()
+   );
 
    return (
       <>

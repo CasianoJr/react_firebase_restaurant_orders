@@ -30,6 +30,7 @@ export default function Signup() {
          history.push("/");
       } catch (err) {
          setError(err.message);
+         setLoading(false);
          console.log("Error:", err.code);
       }
    };
@@ -76,11 +77,11 @@ export default function Signup() {
                         Register
                      </Button>
                   </Form>
+                  <div className="text-muted small mt-2">
+                     Already have an account? <Link to="/login">Click Login</Link>
+                  </div>
                </Card.Body>
             </Card>
-            <div className="text-muted small mx-2">
-               Already have an account? <Link to="/login">Click Login</Link>
-            </div>
          </div>
       </>
    );

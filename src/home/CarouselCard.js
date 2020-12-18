@@ -22,7 +22,11 @@ export default function CarouselCard({ menu }) {
             <div>Good for {menu.serving} persons</div>
             <div>P {menu.price}</div>
          </Card.Footer>
-         <AddToCart menu={menu} />
+         <div className="text-center">
+            <AddToCart className="btn btn-outline-primary my-2" menu={menu}>
+               Order
+            </AddToCart>
+         </div>
          <EditDeleteButtons menu={menu} />
       </Card>
    );

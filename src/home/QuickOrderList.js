@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDataBase } from "../shared/DataBaseProvider";
 import { Image } from "react-bootstrap";
+import AddToCart from "../transaction/AddToCart";
 
 export default function MenuListSection({ menuCategory }) {
    const { appetizers, drinks, desserts } = useDataBase();
@@ -39,7 +40,11 @@ export default function MenuListSection({ menuCategory }) {
                         <th>({menu.serving})</th>
                         <th>{menu.price}</th>
                         <th>
-                           <button className="btn btn-outline-success">PlaceOrder</button>
+                           <div>
+                              <AddToCart className="btn btn-success" menu={menu}>
+                                 Pre Order
+                              </AddToCart>
+                           </div>
                         </th>
                      </tr>
                   ))}

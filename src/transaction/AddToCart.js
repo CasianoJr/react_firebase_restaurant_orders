@@ -1,10 +1,9 @@
-import { Button } from "react-bootstrap";
 import React from "react";
 import { useAuth } from "../authentication/AuthProvider";
 import { db } from "../firebase";
 import { useHistory } from "react-router-dom";
 
-export default function AddToCart({ menu }) {
+export default function AddToCart({ menu, children, ...rest }) {
    const { currentUser, setAuthError } = useAuth();
    const history = useHistory();
 
@@ -13,7 +12,6 @@ export default function AddToCart({ menu }) {
          setAuthError("Please login to place order!");
          return history.push("/login");
       }
-      console.log("adding cart");
       const dbName = "Orders";
       try {
          let responseData = null;
@@ -33,7 +31,6 @@ export default function AddToCart({ menu }) {
                itemOrders: [{ ...menu, orderCount: 1 }],
             };
             await db.collection(dbName).doc(currentUser.email).set(placeOrder);
-            console.log("Done putting.");
          } else if (responseData) {
             const updateOrders = responseData.itemOrders.map((item) => {
                if (item.menu === menu.menu) {
@@ -53,15 +50,14 @@ export default function AddToCart({ menu }) {
                itemOrders: updateOrders,
             };
             await db.collection(dbName).doc(currentUser.email).set(placeOrder);
-            console.log("Done putting.");
          }
       } catch (err) {
          return console.log(err);
       }
    };
    return (
-      <div className="mx-auto mb-2">
-         <Button onClick={handleOrder}>PreOrder</Button>;
-      </div>
+      <span {...rest} onClick={handleOrder}>
+         {children}+
+      </span>
    );
 }
