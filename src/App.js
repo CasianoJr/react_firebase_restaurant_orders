@@ -6,11 +6,12 @@ import NavBar from "./shared/NavBar";
 import BackgroundImage from "./utils/BackgroundImage";
 import AlertMessage from "./authentication/AlertMessage";
 import Instructions from "./utils/Instructions";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "antd/dist/antd.css";
 import BackToTop from "./utils/BackToTop";
 import DataBaseProvider from "./shared/DataBaseProvider";
 import Footer from "./utils/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+import "./custom.css";
 
 function App() {
    return (

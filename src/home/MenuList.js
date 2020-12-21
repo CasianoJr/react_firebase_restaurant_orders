@@ -16,17 +16,15 @@ export default function MenuList() {
             className="d-flex justify-content-center"
             style={{ backgroundColor: "rgb(0,0,0, .4)" }}
          >
-            <div className="text-center">
-               <div className="btn btn-outline-success btn-lg mx-sm-3 mx-auto">
-                  Order now
-               </div>
-               <div className="btn btn-outline-success btn-lg mx-sm-3 mx-auto">
-                  How this website works
-               </div>
-               <div className="btn btn-outline-success btn-lg mx-sm-3 mx-auto">
-                  About us
-               </div>
-            </div>
+            <a href="#quickOrdering" className="btn btn-outline-success m-3">
+               Order now
+            </a>
+            <a href="#quickOrdering" className="btn btn-outline-success m-3">
+               How this website works
+            </a>
+            <a href="#quickOrdering" className="btn btn-outline-success m-3">
+               About us
+            </a>
          </div>
          {/* Featured Menu (Carousel) */}
          <div>
@@ -53,19 +51,20 @@ export default function MenuList() {
          {/* Quick Ordering */}
          <div>
             <div
+               id="quickOrdering"
                className="py-2 my-2 h3 text-center text-white"
                style={{ backgroundColor: "rgb(0,0,0,.4)" }}
             >
                Quick Ordering
             </div>
-            <div className="row container-fluid">
-               <div className="col-lg-2 col-md-3 col-sm-4 p-2 mx-auto">
+            <div className="quickOrderingDiv container-fluid">
+               <div className="orderOption">
                   <QuickOrderOption setMenuCategory={setMenuCategory} />
                </div>
-               <div className="col-lg-6 col-md-9 col-sm-8 p-2 mx-auto">
+               <div className="orderList">
                   <QuickOrderList menuCategory={menuCategory} />
                </div>
-               <div className="col-lg-4 col-md-8 col-10 p-2 mx-auto">
+               <div className="orderOrdered">
                   <QuickOrderOrdered />
                </div>
             </div>

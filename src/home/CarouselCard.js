@@ -9,13 +9,7 @@ export default function CarouselCard({ menu }) {
          <Card.Body>
             <Card.Title className="text-center">{menu.menu}</Card.Title>
             <div style={{ overflow: "hidden" }} className="text-center">
-               <Image
-                  src={menu.image}
-                  className="rounded d-block mx-auto"
-                  height="200"
-                  width="auto"
-                  rounded
-               />
+               <Image src={menu.image} className="carouseCardImage" rounded />
             </div>
          </Card.Body>
          <Card.Footer className="mx-auto w-75">

@@ -13,11 +13,13 @@ export default function Instructions() {
                style={{ backgroundColor: "rgb(0,0,0, .2" }}
             >
                <Modal.Header closeButton>
-                  <Modal.Title>Greetings from Epsilon restaurant!</Modal.Title>
+                  <Modal.Title className="mx-auto">
+                     Greetings from Epsilon restaurant!
+                  </Modal.Title>
                </Modal.Header>
                <Modal.Body>
                   <div className="h5 text-center">
-                     {"Pre-order >> Set a Date >> Come to us >> Dine"}
+                     {"Pre-order >> Set-a-Date >> Come-to-us >> Dine!"}
                   </div>
                   <ul>
                      <li>Our admin will check if your order is valid</li>
@@ -26,6 +28,10 @@ export default function Instructions() {
                   </ul>
                   <div className="h3 text-center text-danger">
                      Thank you for visiting the page!
+                  </div>
+                  <div className="mx-3">
+                     @ demo, click the button in the navbar to activate the admin.
+                     Ofcourse, if you had login
                   </div>
                </Modal.Body>
                <Modal.Footer>

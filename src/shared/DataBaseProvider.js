@@ -9,12 +9,13 @@ export const useDataBase = () => {
 };
 
 export default function DataBaseProvider(props) {
-   const { currentUser } = useAuth();
+   const { currentUser, isAdmin } = useAuth();
    const [loading, setLoading] = useState(true);
    const [appetizers, setAppetizers] = useState([]);
    const [desserts, setDesserts] = useState([]);
    const [drinks, setDrinks] = useState([]);
    const [userOrders, setUserOrders] = useState({});
+   const [allOrders, setAllOrders] = useState([]);
 
    const fetchData = (menuCategory, setData) => {
       db.collection(menuCategory).onSnapshot((snapshot) => {
@@ -59,11 +60,23 @@ export default function DataBaseProvider(props) {
          }
       };
       fetchOrders();
-      setLoading(false);
       return fetchOrders;
    }, [currentUser]);
 
-   const value = { appetizers, desserts, drinks, userOrders };
+   // For Admin Only
+   useEffect(() => {
+      if (isAdmin) {
+         db.collection("Orders")
+            .get()
+            .then((response) => {
+               const items = response.docs.map((item) => item.data());
+               setAllOrders((prevItems) => [...prevItems, ...items]);
+            });
+      }
+      setLoading(false);
+   }, [isAdmin]);
+
+   const value = { appetizers, desserts, drinks, userOrders, allOrders };
    return (
       <DataBaseContext.Provider value={value}>
          {!loading && props.children}

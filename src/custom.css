@@ -1,0 +1,41 @@
+.restaurantCarouseContainer {
+   overflow: hidden;
+   height: 60vh;
+}
+.restaurantCarouselImage {
+   height: 60vh;
+   width: 100%;
+   object-fit: cover;
+}
+.carouseCardImage {
+   height: 30vh;
+   width: 100%;
+   object-fit: cover;
+}
+.quickOrderingDiv {
+   display: grid;
+   grid-gap: 0.5rem;
+   grid-template-areas: "orderOption orderList orderOrdered";
+   grid-template-columns: 0.5fr auto auto;
+}
+
+.orderOption {
+   grid-area: orderOption;
+}
+.orderList {
+   grid-area: orderList;
+   height: 500px;
+   overflow: hidden;
+}
+.orderOrdered {
+   grid-area: orderOrdered;
+}
+
+@media (max-width: 600px) {
+   .quickOrderingDiv {
+      grid-template-areas:
+         ". orderOption ."
+         "orderList orderList orderList"
+         "orderOrdered orderOrdered orderOrdered";
+   }
+}
