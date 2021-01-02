@@ -27,7 +27,7 @@ export default function Instructions() {
                      <li>Our admin will check if your order is valid</li>
                      <li>Your identity is confidential.</li>
                      <li>
-                        @ Site Demo, click the button in the navbar to activate the admin.
+                        @ Site Demo, click the button in the navbar to activate Admin.
                         Ofcourse, if you're already login
                      </li>
                   </ul>
