@@ -16,8 +16,14 @@ export default function RetrieveAllOrders() {
                      <Panel
                         header={
                            <div className="row">
-                              <div className="col">{item.dateOrder}</div>
-                              <div className="col">{item.dateSchedule}</div>
+                              <div className="col">
+                                 {new Date(item.dateOrder).toLocaleDateString()}
+                              </div>
+                              {item.dateSchedule ? (
+                                 <div className="col">{item.dateSchedule}</div>
+                              ) : (
+                                 <div className="col">Not Set</div>
+                              )}
                               <div className="col">{item.user}</div>
                            </div>
                         }

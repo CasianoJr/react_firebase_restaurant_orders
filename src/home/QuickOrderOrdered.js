@@ -5,6 +5,7 @@ import { useDataBase } from "../shared/DataBaseProvider";
 import LoadingPage from "../utils/LoadingPage";
 import RemoveToCart from "../transaction/RemoveToCart";
 import AddToCart from "../transaction/AddToCart";
+import SetDateButton from "../transaction/SetDateButton";
 
 export default function QuickOrderOrdered() {
    const { userOrders } = useDataBase();
@@ -61,6 +62,11 @@ export default function QuickOrderOrdered() {
                            style={{ fontSize: "3vh" }}
                         >
                            Total Amount: {totalAmount}
+                        </div>
+                        <div className="text-center mt-2">
+                           <SetDateButton className="btn btn-outline-primary text-center">
+                              Set Date
+                           </SetDateButton>
                         </div>
                      </>
                   ) : (
