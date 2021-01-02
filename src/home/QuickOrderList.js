@@ -11,9 +11,9 @@ export default function MenuListSection({ menuCategory }) {
       if (menuCategory === "Appetizers") {
          setMenuItems(appetizers);
       } else if (menuCategory === "Desserts") {
-         setMenuItems(drinks);
-      } else {
          setMenuItems(desserts);
+      } else {
+         setMenuItems(drinks);
       }
    }, [appetizers, desserts, drinks, menuCategory]);
 
@@ -40,13 +40,13 @@ export default function MenuListSection({ menuCategory }) {
                         rounded
                      />
                   </div>
-                  <div className="mx-2">
+                  <div className="text-center">
                      <div>Good for {menu.serving} person(s)</div>
                      <div>{menu.price}</div>
+                     <AddToCart className="btn btn-success" menu={menu}>
+                        Pre Order
+                     </AddToCart>
                   </div>
-                  <AddToCart className="btn btn-success" menu={menu}>
-                     Pre Order
-                  </AddToCart>
                </div>
             ))}
          </div>

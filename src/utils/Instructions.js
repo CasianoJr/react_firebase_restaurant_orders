@@ -18,20 +18,21 @@ export default function Instructions() {
                   </Modal.Title>
                </Modal.Header>
                <Modal.Body>
-                  <div className="h5 text-center">
-                     {"Pre-order >> Set-a-Date >> Come-to-us >> Dine!"}
-                  </div>
                   <ul>
+                     <li>Pre-order</li>
+                     <li>Set-a-Date</li>
+                     <li>Come-to-us</li>
+                     <li>Dine!</li>
+                     <hr />
                      <li>Our admin will check if your order is valid</li>
-                     <li>Please show your identification at the reception</li>
-                     <li>We strictly observe client's privacy confidential.</li>
+                     <li>Your identity is confidential.</li>
+                     <li>
+                        @ Site Demo, click the button in the navbar to activate the admin.
+                        Ofcourse, if you're already login
+                     </li>
                   </ul>
-                  <div className="h3 text-center text-danger">
+                  <div className="h5 text-center text-danger">
                      Thank you for visiting the page!
-                  </div>
-                  <div className="mx-3">
-                     @ demo, click the button in the navbar to activate the admin.
-                     Ofcourse, if you had login
                   </div>
                </Modal.Body>
                <Modal.Footer>
